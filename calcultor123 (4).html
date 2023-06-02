@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Circular Calculator</title>
+    <style>
+      body {
+        background-color:blue and red #d9f2d2;
+        font-family: sans-serif;
+      }
+      h1 {
+        color: #00b300;
+        text-align: center;
+      }
+      form {
+        background-color:blue and red #fff;
+        border-radius: 50%;
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      input[type="text"] {
+        background-color:blue and red #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: right;
+        width: 100%;
+      }
+      input[type="button"] {
+        background-color:blue and red #00b300;
+        border: none;
+        border-radius: 50%;
+        color:blue and red #fff;
+        font-size: 24px;
+        margin: 5px;
+        padding: 20px;
+        width: 80px;
+        height: 80px;
+      }
+      input[type="button"]:hover {
+        background-color:blue and red #008000;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Circular Calculator</h1>
+    <form>
+      <input type="text" name="result" id="result" readonly>
+      <input type="button" value="1" onclick="append('1')">
+      <input type="button" value="2" onclick="append('2')">
+      <input type="button" value="3" onclick="append('3')">
+      <input type="button" value="+" onclick="append('+')">
+      <input type="button" value="4" onclick="append('4')">
+      <input type="button" value="5" onclick="append('5')">
+      <input type="button" value="6" onclick="append('6')">
+      <input type="button" value="-" onclick="append('-')">
+      <input type="button" value="7" onclick="append('7')">
+      <input type="button" value="8" onclick="append('8')">
+      <input type="button" value="9" onclick="append('9')">
+      <input type="button" value="*" onclick="append('*')">
+      <input type="button" value="C" onclick="clearInput()">
+      <input type="button" value="0" onclick="append('0')">
+      <input type="button" value="=" onclick="calculate()">
+      <input type="button" value="/" onclick="append('/')">
+    </form>
+    <script>
+      function append(value) {
+        document.getElementById("result").value += value;
+      }
+      
+      function clearInput() {
+        document.getElementById("result").value = "";
+      }
+      
+      function calculate() {
+        var result = eval(document.getElementById("result").value);
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>
